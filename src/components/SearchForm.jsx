@@ -6,7 +6,9 @@ const SearchForm = () => {
   const { setSearchTerm } = useAppContext();
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearchTerm(e.target.elements.search.value);
+    if (e.target.elements.search.value) {
+      setSearchTerm(e.target.elements.search.value);
+    }
   };
 
   return (
